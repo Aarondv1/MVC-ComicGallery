@@ -1,40 +1,35 @@
 ﻿@{
-    Layout = null;
-
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Comic Book Detail";
 }
 
-<!DOCTYPE html>
+@*//HTML Head and Body elements now all live in the layout page
+// removed all the tags except this one div*@
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <div>
+
+    
     <h1>@ViewBag.SeriesTitle</h1>
     <h2>Issue #@ViewBag.IssueNumber</h2>
 
     <h5>Description:</h5>
-        <div>@Html.Raw(ViewBag.Description)</div>
+    <div>@Html.Raw(ViewBag.Description)</div>
 
-        @if(ViewBag.Artists.Length > 0)
+    @if(ViewBag.Artists.Length > 0)
         
-        {
-        <h5>Artists:</h5>
-        <div>
-            <ul>
-                @foreach (var artist in ViewBag.Artists)
-                {
-                    <li>@artist</li>
+    {
+    <h5>Artists:</h5>
+    <div>
+    <ul>
+    @foreach (var artist in ViewBag.Artists)
+    {
+        <li>@artist</li>
 
-                }
-            </ul>
-        </div>
-        }
-        
-
-
+    }
+    </ul>
     </div>
-</body>
-</html>
+    }
+        
+
+
+   
+
