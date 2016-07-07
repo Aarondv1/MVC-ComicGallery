@@ -18,6 +18,14 @@ namespace ComicBookGallery.Controllers
             _comicBookRepository = new ComicBookRepository();
         }
 
+        //Here is the 'Index Action method inbetween Class constructor and the Detail/Action method
+
+            public ActionResult Index()
+        {
+            var comicbooks = _comicBookRepository.GetComicBooks();
+            return View(comicbooks);
+        }
+
 
         public ActionResult Detail(int? id)
         {
